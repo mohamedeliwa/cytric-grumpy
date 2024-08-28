@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./page.module.css";
-import { Button, Layout, Space } from "antd";
+import { Layout, Space } from "antd";
 import PurchaseForm from "@/components/Purchase.Form";
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
           width={200}
           height={83.5}
         />
-        <Button className={styles.header_btn}>Connect Wallet</Button>
+        <w3m-button />
       </Space>
       <Space className={styles.content}>
         <h1 className={styles.content_header}>Presale</h1>

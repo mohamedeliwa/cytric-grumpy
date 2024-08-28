@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import type { FormProps } from "antd";
 import { Button, Card, Form, InputNumber } from "antd";
 import styles from "./Purchase.Form.module.css";
-import ConnectWalletModal from "./ConnectWallet.modal";
+import { useWeb3Modal } from "@web3modal/wagmi/react";
 
 type FieldType = {
   username?: string;
@@ -17,7 +17,7 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
 };
 
 const PurchaseForm = () => {
-  const [open, setOpen] = useState<boolean>(false);
+  const { open, close } = useWeb3Modal();
   return (
     <Card className={styles.card}>
       <h3 className={styles.form_title}>Participation Details</h3>
@@ -50,21 +50,15 @@ const PurchaseForm = () => {
         </Form.Item>
 
         <Form.Item>
-          <ConnectWalletModal
-            open={open}
-            setOpen={setOpen}
-            button={
-              <Button
-                className={styles.form_btn}
-                type="primary"
-                // htmlType="submit"
-                block
-                onClick={() => setOpen(true)}
-              >
-                Connect Wallet
-              </Button>
-            }
-          />
+          <Button
+            className={styles.form_btn}
+            type="primary"
+            // htmlType="submit"
+            block
+            onClick={() => open()}
+          >
+            Connect Wallet
+          </Button>
         </Form.Item>
       </Form>
     </Card>

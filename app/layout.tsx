@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
+import { cookieToInitialState } from "wagmi";
+import { headers } from "next/headers";
+
+import { config } from "../components/WagmiConfig";
+import AppKitProvider from "../components/ApiKitProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +20,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const initialState = cookieToInitialState(config, headers().get("cookie"));
+
   return (
     <html lang="en">
       <head>
@@ -26,7 +33,9 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <AntdRegistry>{children}</AntdRegistry>
+        <AppKitProvider initialState={initialState}>
+          <AntdRegistry>{children}</AntdRegistry>
+        </AppKitProvider>
       </body>
     </html>
   );

@@ -13,19 +13,6 @@
   box-sizing: border-box;
 }
 
-.header_btn {
-  background-color: rgb(102, 125, 255) !important;
-  font-family: Inter, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-    Droid Sans, Helvetica Neue, sans-serif !important;
-  color: white !important;
-  font-size: 16px !important;
-  border-radius: 28px !important;
-  font-weight: 700 !important;
-  width: 142px !important;
-  height: 40px !important;
-  border: none !important;
-}
-
 .content {
   margin-top: 32px;
   padding: 16px;
