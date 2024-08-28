@@ -1,8 +1,8 @@
 "use client";
 
-import Head from "next/head";
 import styles from "./page.module.css";
 import { Button, Layout, Space } from "antd";
+import PurchaseForm from "@/components/Purchase.Form";
 
 export default function Home() {
   return (
@@ -24,7 +24,8 @@ export default function Home() {
           <br />
           opportunity to buy as one of the first for the cheapest price.
         </p>
-        <h3>Warning</h3>
+        <PurchaseForm />
+        <h3 className={styles.content_warning}>Warning</h3>
         <p>
           Do not send funds from an exchange. You will lose your funds if you
           do.
@@ -33,7 +34,6 @@ export default function Home() {
           <br /> All amounts below 0.005 and above 1 ETH will be refunded.
         </p>
       </Space>
-      {/* <Space className={styles.footer}>Footer</Space> */}
     </Layout>
   );
 }

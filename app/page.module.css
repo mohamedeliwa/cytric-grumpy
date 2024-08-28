@@ -5,9 +5,7 @@
 }
 
 .header {
-  /* background-color: lightblue; */
   display: flex;
-  /* display: block; */
   justify-content: space-between;
   align-items: center;
   height: 120px !important;
@@ -29,7 +27,6 @@
 }
 
 .content {
-  /* background-color: lightblue; */
   margin-top: 32px;
   padding: 16px;
   display: flex;
@@ -52,9 +49,13 @@
   font-size: 16px;
 }
 
+.content_warning {
+  color: rgb(28, 25, 23);
+  font-weight: 700;
+  line-height: 24px;
+  font-size: 24px;
+}
+
 .content_first_p {
   margin-top: 48px;
 }
-
-/* .footer {
-} */
